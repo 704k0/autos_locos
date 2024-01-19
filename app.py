@@ -3,6 +3,13 @@ import plotly.express as px
 import streamlit as st
 
 car_data = pd.read_csv('vehicles_us.csv') # leer los datos
+
+header_text = "Genera histogramas y gráficas de dispersión"
+st.title(header_text)
+
+subheader_text = "Botones mágicos"
+st.markdown(f"**{subheader_text}**")
+
 hist_button = st.button('Construir histograma') # crear un botón
 
 if hist_button: # al hacer clic en el botón
@@ -26,6 +33,10 @@ if hist_button: # al hacer clic en el botón
 
     # mostrar un gráfico Plotly interactivo
     st.plotly_chart(fig, use_container_width=True)
+
+st.markdown("---")  # Línea separadora
+subsubheader_text = "Casillas de verificación"
+st.markdown(f"**{subsubheader_text}**")
 
 # crear una casilla de verificación
 build_histogram = st.checkbox('Construir un histograma')
